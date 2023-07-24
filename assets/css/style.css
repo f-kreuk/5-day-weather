@@ -33,7 +33,7 @@ header {
   padding: 5px;
   padding-top: 0px;
   background-color: var(--darkblue);
-  background: linear-gradient(.25turn, var(--darkblue), 10%, var(--darkpurple));
+  background: linear-gradient(.25turn, var(--darkblue), 33%, var(--darkpurple));
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,9 +45,8 @@ h3,
 h4,
 h5,
 h6 {
-  margin-bottom: auto;
   font-weight: 750;
-  line-height: 1.1;
+  line-height: 1;
   font: sans-serif;
 }
 
@@ -59,7 +58,10 @@ h1 {font-size: 1.5rem;
     color: var(--bone);}
 
 h2 {font-size: 1.25rem;
-    color: var(--darkgrey); }
+    color: var(--darkgrey); 
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    margin-left:.25rem}
 
 h3 {font-size: 1rem;}
 
@@ -74,6 +76,113 @@ p {margin-bottom: 1rem;
     background-color: var(--bone);
     color: var(--darkgrey); 
 }
+
+/* Below is the styling for the search section */
+
+.city-search-class {
+  width: 20%;
+  float: left;
+  margin-top: .05rem;
+  min-height: 25%;
+}
+
+.city-search-class button {
+  width: 92.5%;
+  margin-left: .25rem;
+  margin-right: .25rem;
+  margin-bottom: 1rem;
+  border: none;
+  color: var(--bone);
+  background-color: var(--darkblue);
+  border-radius: .33rem;
+  height: 1.5rem;
+}
+
+#cityId {
+  width: 92.5%;
+  align-items: center;
+  margin-left: rem;
+  margin-right: .5rem;
+}
+
+.cityStorageClass {
+  border-top: .1rem solid var(--darkgrey);
+  width: 92.5%;
+  align-items: center;
+  margin-left: .25rem;
+  margin-right: .25rem;
+}
+
+.local-cities {
+  background-color: var(--grey);
+  border-radius: .1rem;
+  border-radius: .33rem;
+  height: 1.5rem;
+  }
+
+/* Below is the styling for the weather results */
+
+.WeatherResults {
+width: 75%;
+display: flex;
+flex-direction: column;
+text-align: left;
+justify-content: left;
+align-items: left;
+border: .1rem solid var(--darkgrey);
+margin-top: .5rem;
+}
+
+/* Below is the styling for the main div for today's weather */
+
+.currentWeatherClass {
+width: 79%;
+display: flex;
+flex-direction: column;
+text-align: left;
+justify-content: left;
+align-items: left;
+border: .1rem solid var(--darkgrey);
+margin-top: .5rem;
+border-radius: .33rem;
+}
+
+#currentLocalnDate, #currentLocalTemp, #currentLocalWind, #currentLocalHumidity {
+  text-align: left;
+  margin-top: .25rem;
+  margin-bottom: .25rem;
+  margin-left: .05rem
+}
+
+/* Below is the styling for the five day weather divs */
+
+.fiveDayheader {
+  margin-bottom: 1rem;
+  width: 79%;
+
+}
+
+.dailyforecastClass {
+  background-color: var(--darkgrey);
+  width: 12.5%;
+  flex-direction: column;
+  display: flex;
+  float: left;
+  margin-right: 1rem;
+  color: var(--bone);
+  border-radius: .33rem;
+}
+
+.dailyforecastClass p, h3 {
+  background-color: var(--darkgrey);
+  text-align: left;
+  margin-top: .33rem;
+  margin-bottom: .33rem;
+  color: var(--bone);
+  margin-left: .25rem;
+}
+
+
 
   @media (max-width: 690px) {
     .btn {
