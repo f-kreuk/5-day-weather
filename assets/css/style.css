@@ -6,6 +6,7 @@
     --grey: rgb(233, 231, 231);
     --darkgrey: rgb(52, 52, 53);
     --darkorange: #69270d;
+    --darkpurple: rgb(59, 3, 133); 
   }
 
   ::selection {
@@ -31,7 +32,11 @@ body {
 header {
   padding: 5px;
   padding-top: 0px;
-  color: var(--darkblue);
+  background-color: var(--darkblue);
+  background: linear-gradient(.25turn, var(--darkblue), 10%, var(--darkpurple));
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
@@ -40,23 +45,20 @@ h3,
 h4,
 h5,
 h6 {
-  margin-bottom: 0.625rem;
-  color: var(--heliotrope);
+  margin-bottom: auto;
   font-weight: 750;
   line-height: 1.1;
   font: sans-serif;
-  color: var(--darkgrey);
 }
 
-h1 {font-size: 2rem;
-    font: 2rem sans-serif;
+h1 {font-size: 1.5rem;
+    font: 1.5rem sans-serif;
     font-weight: bold;
     text-align: center;
     margin-top: 1rem;
-    background-color: var(--bone);
-    color: var(--darkgrey); }
+    color: var(--bone);}
 
-h2 {font-size: 1.75rem;
+h2 {font-size: 1.25rem;
     color: var(--darkgrey); }
 
 h3 {font-size: 1rem;}
@@ -69,15 +71,6 @@ p {margin-bottom: 1rem;
     font: 1rem sans-serif;
     text-align: center;
     margin-top: 1rem;
-    background-color: var(--bone);
-    color: var(--darkgrey); 
-}
-
-h1 {
-    font: 2rem sans-serif;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 2rem;
     background-color: var(--bone);
     color: var(--darkgrey); 
 }
