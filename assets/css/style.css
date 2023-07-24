@@ -136,7 +136,7 @@ margin-top: .5rem;
 /* Below is the styling for the main div for today's weather */
 
 .currentWeatherClass {
-width: 79%;
+width: 99%;
 display: flex;
 flex-direction: column;
 text-align: left;
@@ -164,7 +164,7 @@ border-radius: .33rem;
 
 .dailyforecastClass {
   background-color: var(--darkgrey);
-  width: 12.5%;
+  width: 14%;
   flex-direction: column;
   display: flex;
   float: left;
