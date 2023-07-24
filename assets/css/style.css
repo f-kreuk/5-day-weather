@@ -123,13 +123,13 @@ p {margin-bottom: 1rem;
 /* Below is the styling for the weather results */
 
 .WeatherResults {
-width: 75%;
+width: 79%;
 display: flex;
 flex-direction: column;
 text-align: left;
 justify-content: left;
 align-items: left;
-border: .1rem solid var(--darkgrey);
+
 margin-top: .5rem;
 }
 
@@ -184,7 +184,7 @@ border-radius: .33rem;
 
 
 
-  @media (max-width: 1000px) {
+  @media (max-width: 690px) {
     .btn {
       font-size: 1rem;
       margin: 16px 0px 0px 0px;
