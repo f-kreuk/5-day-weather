@@ -1,0 +1,98 @@
+:root {
+    --orange: #ef622a;
+    --darkblue: #3d5ab8;
+    --heliotrope: #faecec;
+    --bone: #fafafa;
+    --grey: rgb(233, 231, 231);
+    --darkgrey: rgb(52, 52, 53);
+    --darkorange: #69270d;
+  }
+
+  ::selection {
+    background-color: var(--orange);
+    color: var(--bone);
+  }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: var(--bone);
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+header {
+  padding: 5px;
+  padding-top: 0px;
+  color: var(--darkblue);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.625rem;
+  color: var(--heliotrope);
+  font-weight: 750;
+  line-height: 1.1;
+  font: sans-serif;
+  color: var(--darkgrey);
+}
+
+h1 {font-size: 2rem;
+    font: 2rem sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+    background-color: var(--bone);
+    color: var(--darkgrey); }
+
+h2 {font-size: 1.75rem;
+    color: var(--darkgrey); }
+
+h3 {font-size: 1rem;}
+
+h4 {font-size: .75rem;}
+
+h5 {font-size: .5rem;}
+
+p {margin-bottom: 1rem;
+    font: 1rem sans-serif;
+    text-align: center;
+    margin-top: 1rem;
+    background-color: var(--bone);
+    color: var(--darkgrey); 
+}
+
+h1 {
+    font: 2rem sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 2rem;
+    background-color: var(--bone);
+    color: var(--darkgrey); 
+}
+
+  @media (max-width: 690px) {
+    .btn {
+      font-size: 1rem;
+      margin: 16px 0px 0px 0px;
+      padding: 10px 15px;
+    }
+  
+  }
+  
+  @media (max-width: 500px) {
+    .btn {
+      font-size: 0.8rem;
+    }
+  }
