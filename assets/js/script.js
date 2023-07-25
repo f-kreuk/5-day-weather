@@ -1,3 +1,5 @@
+let currentCity = "";
+
 //Local Storage Code is below:
 
 //Below function loads the previous searches when the page is refreshed.
@@ -24,6 +26,7 @@ clearBtn.addEventListener('click', function() {
 const searchBtn = document.getElementById("submit");
 searchBtn.addEventListener('click', function() {
     city = document.getElementById("cityId").value;
+    currentCity = city;
     //below clears my li list before I run the addtoULlist to avoid duplicates
     document.getElementById("local-cities").innerHTML = "";
     addtolocalstorage();
@@ -60,17 +63,20 @@ function addtoULlist () {
 $('#local-cities').on('click','li', function() {
     console.log("click works");
     var oldCity = $(this).text();
+
 });
 
 //Below are the getWeather functions:
 
+//Below gets the lat and lon from City fetch
+
 function getWeather () {
-    fetch("http://api.openweathermap.org/geo/1.0/direct?q="+ city + "&limit=1&appid=832cf34605e4ecca0f923b6ee27d32a9") 
+    fetch("http://api.openweathermap.org/data/2.5/forecast?q=london,uk&appid=832cf34605e4ecca0f923b6ee27d32a9")
     .then(response => {
-        return response.json();
+      return response.json();
     })
     .then(data => {
-       var weather = data.weather[0].icon;
-        console.log(weather);
-        });
-    };
+      console.log(response.json());
+    })
+    .catch(error = console.log("API Error"));
+};
