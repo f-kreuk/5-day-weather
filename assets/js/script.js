@@ -34,7 +34,7 @@ searchBtn.addEventListener('click', function() {
 // utilized https://www.youtube.com/watch?v=2hJ1rTANVnk for the local storage piece. The below code adds the user input cities after a click event into an array with a key of "searches".
 
 function addtolocalstorage () {
-    console.log(city);
+    //console.log(city);
     var new_data = city;
     if(localStorage.getItem('searches') == null){
         localStorage.setItem('searches','[]');
@@ -55,6 +55,12 @@ function addtoULlist () {
     };
 }
 
+//utilized jquery to get value from prior City searches when clicked with this resource: https://codepedia.info/click-event-for-dynamic-button-jquery
+
+$('#local-cities').on('click','li', function() {
+    console.log("click works");
+    var oldCity = $(this).text();
+});
 
 //Below are the getWeather functions:
 
