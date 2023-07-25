@@ -72,12 +72,8 @@ $('#local-cities').on('click','li', function() {
 //Below gets the lat and lon from City fetch
 
 function getWeather () {
-    fetch("HTTP://api.openweathermap.org/data/2.5/forecast?q=london,uk&appid=832cf34605e4ecca0f923b6ee27d32a9")
-    .then(response => {
-      return response.json();
-    })
-    .then(data => {
-      console.log(response.json());
-    })
+    fetch("HTTP://api.openweathermap.org/data/2.5/forecast?q=london&appid=832cf34605e4ecca0f923b6ee27d32a9")
+    .then(response => response.json())
+    .then(data => console.log(data))
     .catch(error = console.log("API Error"));
 };
