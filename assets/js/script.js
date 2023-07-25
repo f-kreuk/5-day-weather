@@ -1,4 +1,5 @@
 let currentCity = "";
+var key = "832cf34605e4ecca0f923b6ee27d32a9";
 
 //Local Storage Code is below:
 
@@ -71,7 +72,7 @@ $('#local-cities').on('click','li', function() {
 //Below gets the lat and lon from City fetch
 
 function getWeather () {
-    fetch("http://api.openweathermap.org/data/2.5/forecast?q=london,uk&appid=832cf34605e4ecca0f923b6ee27d32a9")
+    fetch("HTTP://api.openweathermap.org/data/2.5/forecast?q=london,uk&appid=832cf34605e4ecca0f923b6ee27d32a9")
     .then(response => {
       return response.json();
     })
