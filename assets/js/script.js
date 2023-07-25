@@ -24,7 +24,7 @@ clearBtn.addEventListener('click', function() {
 const searchBtn = document.getElementById("submit");
 searchBtn.addEventListener('click', function() {
     city = document.getElementById("cityId").value;
-    //below clears my li list before I run the addtoULlist so I don't get duplicates
+    //below clears my li list before I run the addtoULlist to avoid duplicates
     document.getElementById("local-cities").innerHTML = "";
     addtolocalstorage();
     getWeather();
