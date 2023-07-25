@@ -75,6 +75,11 @@ p {margin-bottom: 1rem;
     margin-top: 1rem;
     background-color: var(--bone);
     color: var(--darkgrey); 
+
+  }
+ol,
+ul {
+  padding-left: 0rem;
 }
 
 /* Below is the styling for the search section */
@@ -128,6 +133,10 @@ p {margin-bottom: 1rem;
   text-align: center;
   }
 
+.button:hover {
+  background-color: var(--darkpurple);
+}
+
 /* Below is the styling for the weather results */
 
 .WeatherResults {
@@ -142,6 +151,8 @@ margin-top: .5rem;
 }
 
 /* Below is the styling for the main div for today's weather */
+
+
 
 .currentWeatherClass {
 width: 99%;
