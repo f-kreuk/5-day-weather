@@ -113,7 +113,13 @@ p {margin-bottom: 1rem;
   margin-right: .25rem;
 }
 
-.local-cities {
+.local-cities ul {
+  list-style: none;
+  margin: 0;
+}
+
+.local-cities li {
+  list-style-type: none;
   background-color: var(--grey);
   border-radius: .1rem;
   border-radius: .33rem;

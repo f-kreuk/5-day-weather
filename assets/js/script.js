@@ -1,11 +1,20 @@
-const searchBtn = document.querySelector(".button");
+const clearBtn = document.getElementById("clear");
+clearBtn.addEventListener('click', function() {
+    localStorage.clear();
+    document.getElementById("local-cities").innerHTML = "";
+});
+
+const searchBtn = document.getElementById("submit");
 searchBtn.addEventListener('click', function() {
     city = document.getElementById("cityId").value;
+    
+    //below clears my li list before I run the addtoULlist so I don't get duplicates
+
+    document.getElementById("local-cities").innerHTML = "";
     addtolocalstorage();
     getWeather();
     addtoULlist();
-})
-
+});
 
 function getWeather () {
     fetch("http://api.openweathermap.org/geo/1.0/direct?q="+ city + "&limit=1&appid=832cf34605e4ecca0f923b6ee27d32a9") 
@@ -34,5 +43,14 @@ function addtolocalstorage () {
 };
  
 function addtoULlist () {
+
+    //utilized https://stackoverflow.com/questions/37544230/how-to-get-total-count-of-a-particular-key-in-local-storage to find length of local storage for specific key
+
+    var addsearchArray = JSON.parse(localStorage.getItem('searches'));
+    for (let i = 0; i < addsearchArray.length; i++) {
+        let list = document.createElement('li');
+        list.innerText = addsearchArray[i];
+        document.querySelector('#local-cities').appendChild(list);  
+    };
 
 }
