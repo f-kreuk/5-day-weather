@@ -12,6 +12,8 @@ window.onload = function() {
         list.innerText = addsearchArray[i];
         document.querySelector('#local-cities').appendChild(list);  
     };
+    let currentCity = "boston";
+    getweather();
   };
 
 //Below is code to clear the local storage
@@ -26,12 +28,12 @@ clearBtn.addEventListener('click', function() {
 
 const searchBtn = document.getElementById("submit");
 searchBtn.addEventListener('click', function() {
-    city = document.getElementById("cityId").value;
-    currentCity = city;
+    theCity = document.getElementById("cityId").value;
+    currentCity = theCity;
     //below clears my li list before I run the addtoULlist to avoid duplicates
     document.getElementById("local-cities").innerHTML = "";
     addtolocalstorage();
-    getWeather();
+    getweather();
     addtoULlist();
 });
 
@@ -39,7 +41,7 @@ searchBtn.addEventListener('click', function() {
 
 function addtolocalstorage () {
     //console.log(city);
-    var new_data = city;
+    var new_data = theCity;
     if(localStorage.getItem('searches') == null){
         localStorage.setItem('searches','[]');
     };
@@ -71,9 +73,75 @@ $('#local-cities').on('click','li', function() {
 
 //Below gets the lat and lon from City fetch
 
-function getWeather () {
-    fetch("HTTP://api.openweathermap.org/data/2.5/forecast?q=london&appid=832cf34605e4ecca0f923b6ee27d32a9")
+var lon;
+var let;
+
+function getweather () {
+    fetch("HTTP://api.openweathermap.org/data/2.5/forecast?q=" + currentCity + "&appid=832cf34605e4ecca0f923b6ee27d32a9&units=imperial")
     .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error = console.log("API Error"));
+    .then(function (response) {
+        console.log(response);
+        let lat = response.city.coord.lat;
+        console.log(lat);
+        let lon = response.city.coord.lon;
+        console.log(lon);
+
+        const currentLocalDate1 = document.getElementById('1currentLocalDate');
+        const currentLocalDate2 = document.getElementById('2currentLocalDate');
+        const currentLocalDate3 = document.getElementById('3currentLocalDate');
+        const currentLocalDate4 = document.getElementById('4currentLocalDate');
+        const currentLocalDate5 = document.getElementById('5currentLocalDate');
+
+        const currentLocalicon1 = document.getElementById('1currentLocalIcon');
+        const currentLocalicon2 = document.getElementById('2currentLocalIcon');
+        const currentLocalicon3 = document.getElementById('3currentLocalIcon');
+        const currentLocalicon4 = document.getElementById('4currentLocalIcon');
+        const currentLocalicon5 = document.getElementById('5currentLocalIcon');
+
+        const currentLocalTemp1 = document.getElementById('1currentLocalTemp');
+        const currentLocalTemp2 = document.getElementById('2currentLocalTemp');
+        const currentLocalTemp3 = document.getElementById('3currentLocalTemp');
+        const currentLocalTemp4 = document.getElementById('4currentLocalTemp');
+        const currentLocalTemp5 = document.getElementById('5currentLocalTemp');
+
+        const currentLocalWind1 = document.getElementById('1currentLocalWind');
+        const currentLocalWind2 = document.getElementById('2currentLocalWind');
+        const currentLocalWind3 = document.getElementById('3currentLocalWind');
+        const currentLocalWind4 = document.getElementById('4currentLocalWind');
+        const currentLocalWind5 = document.getElementById('5currentLocalWind');
+
+        const currentLocalHumidity1 = document.getElementById('1currentLocalHumidity');
+        const currentLocalHumidity2 = document.getElementById('2currentLocalHumidity');
+        const currentLocalHumidity3 = document.getElementById('3currentLocalHumidity');
+        const currentLocalHumidity4 = document.getElementById('4currentLocalHumidity');
+        const currentLocalHumidity5 = document.getElementById('5currentLocalHumidity');
+
+        currentLocalDate1.textContent = response.list[3].dt_txt.substring(0,10);
+        currentLocalDate2.textContent = response.list[11].dt_txt.substring(0,10);
+        currentLocalDate3.textContent = response.list[19].dt_txt.substring(0,10);
+        currentLocalDate4.textContent = response.list[27].dt_txt.substring(0,10);
+        currentLocalDate5.textContent = response.list[35].dt_txt.substring(0,10);
+
+        currentLocalTemp1.textContent = "Temp: " + response.list[3].main.temp + "F";
+        currentLocalTemp2.textContent = "Temp: " + response.list[11].main.temp + "F";
+        currentLocalTemp3.textContent = "Temp: " + response.list[19].main.temp + "F";
+        currentLocalTemp4.textContent = "Temp: " + response.list[27].main.temp + "F";
+        currentLocalTemp5.textContent = "Temp: " + response.list[35].main.temp + "F";
+
+        currentLocalWind1.textContent = "Wind: " + response.list[3].wind.speed + " MPH";
+        currentLocalWind2.textContent = "Wind: " + response.list[11].wind.speed + " MPH";
+        currentLocalWind3.textContent = "Wind: " + response.list[19].wind.speed + " MPH";
+        currentLocalWind4.textContent = "Wind: " + response.list[27].wind.speed + " MPH";
+        currentLocalWind5.textContent = "Wind: " + response.list[35].wind.speed + " MPH";
+
+        currentLocalHumidity1 = "Humidity: " + response.list[3].main.humidity + "%";
+        currentLocalHumidity2 = "Humidity: " + response.list[11].main.humidity + "%";
+        currentLocalHumidity3 = "Humidity: " + response.list[19].main.humidity + "%";
+        currentLocalHumidity4 = "Humidity: " + response.list[27].main.humidity + "%";
+        currentLocalHumidity5 = "Humidity: " + response.list[35].main.humidity + "%";
+
+
+        //getWeather();
+        //.then(data => console.log(data))
+    })
 };
