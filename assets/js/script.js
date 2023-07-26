@@ -122,11 +122,11 @@ function getweather () {
         currentLocalDate4.textContent = response.list[27].dt_txt.substring(0,10);
         currentLocalDate5.textContent = response.list[35].dt_txt.substring(0,10);
 
-        currentLocalTemp1.textContent = "Temp: " + response.list[3].main.temp + "F";
-        currentLocalTemp2.textContent = "Temp: " + response.list[11].main.temp + "F";
-        currentLocalTemp3.textContent = "Temp: " + response.list[19].main.temp + "F";
-        currentLocalTemp4.textContent = "Temp: " + response.list[27].main.temp + "F";
-        currentLocalTemp5.textContent = "Temp: " + response.list[35].main.temp + "F";
+        currentLocalTemp1.textContent = "Temp: " + response.list[3].main.temp + " F";
+        currentLocalTemp2.textContent = "Temp: " + response.list[11].main.temp + " F";
+        currentLocalTemp3.textContent = "Temp: " + response.list[19].main.temp + " F";
+        currentLocalTemp4.textContent = "Temp: " + response.list[27].main.temp + " F";
+        currentLocalTemp5.textContent = "Temp: " + response.list[35].main.temp + " F";
 
         currentLocalWind1.textContent = "Wind: " + response.list[3].wind.speed + " MPH";
         currentLocalWind2.textContent = "Wind: " + response.list[11].wind.speed + " MPH";
