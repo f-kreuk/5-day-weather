@@ -105,7 +105,7 @@ function getcurrentWeather () {
 //Below gets the 5-day weather forecast for the city:
 
 function getweather () {
-    fetch("HTTP://api.openweathermap.org/data/2.5/forecast?q=" + currentCity + "&appid=832cf34605e4ecca0f923b6ee27d32a9&units=imperial")
+    fetch("HTTPs://api.openweathermap.org/data/2.5/forecast?q=" + currentCity + "&appid=832cf34605e4ecca0f923b6ee27d32a9&units=imperial")
     .then(response => response.json())
     .then(function (response) {
         console.log(response);
