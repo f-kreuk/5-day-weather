@@ -133,6 +133,11 @@ ul {
   text-align: center;
   }
 
+  .local-cities li:hover {
+    background-color: var(--darkgrey);
+    color: var(--bone);
+    }
+
 .button:hover {
   background-color: var(--darkpurple);
 }
