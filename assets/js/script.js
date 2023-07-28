@@ -35,7 +35,6 @@ searchBtn.addEventListener('click', function() {
     //below clears my li list before I run the addtoULlist to avoid duplicates
     document.getElementById("local-cities").innerHTML = "";
     addtolocalstorage();
-    getweather();
     addtoULlist();
     getcurrentWeather();
 });
@@ -72,7 +71,6 @@ $('#local-cities').on('click','li', function() {
     console.log(oldCity);
     currentCity = $(this).text();
     getcurrentWeather();
-    getweather();
 });
 
 //Below are the getWeather functions:
@@ -101,10 +99,8 @@ function getcurrentWeather () {
         currentLocalHumidity.textContent = "Current Humidity: " + response.main.humidity + "%";
 
     });
+    getweather();
 };
-
-
-https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
 
 //Below gets the 5-day weather forecast for the city:
 
