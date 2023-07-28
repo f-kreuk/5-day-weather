@@ -5,7 +5,8 @@ This website was created Florian Kreuk as part of the UCONN Coding Bootcamp modu
 
 The following image demonstrates the web application's appearence:
 
-Below is the landing page:
+Below is an example of the website's appearance:
+
 ![web application appearance](./assets/images/5-day-weather.PNG)
 
 The following link takes you to the deployed application: [link](https://f-kreuk.github.io/5-day-weather/)
