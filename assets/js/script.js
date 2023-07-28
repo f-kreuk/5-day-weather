@@ -13,7 +13,7 @@ window.onload = function() {
         document.querySelector('#local-cities').appendChild(list);  
     };
     let currentCity = "boston";
-    getweather();
+    getcurrentWeather();
   };
 
 //Below is code to clear the local storage
@@ -33,8 +33,8 @@ searchBtn.addEventListener('click', function() {
     //below clears my li list before I run the addtoULlist to avoid duplicates
     document.getElementById("local-cities").innerHTML = "";
     addtolocalstorage();
-    getweather();
     addtoULlist();
+    getcurrentWeather();
 });
 
 // utilized https://www.youtube.com/watch?v=2hJ1rTANVnk for the local storage piece. The below code adds the user input cities after a click event into an array with a key of "searches".
@@ -71,20 +71,39 @@ $('#local-cities').on('click','li', function() {
 
 //Below are the getWeather functions:
 
-//Below gets the lat and lon from City fetch
+//Below gets the current weather forecast for the city:
 
-var lon;
-var let;
+function getcurrentWeather () {
+    fetch("https://api.openweathermap.org/data/2.5/weather?q=boston&appid=832cf34605e4ecca0f923b6ee27d32a9&units=imperial")
+    .then(response => response.json())
+    .then(function (response) {
+        console.log(response);
+        console.log(response.main.humidity);
+
+        const currentLocalnDate = document.getElementById('currentLocalnDate');
+        const currentLocalTemp = document.getElementById('currentLocalTemp');
+        const currentLocalWind = document.getElementById('currentLocalWind');
+        const currentLocalHumidity = document.getElementById('currentLocalHumidity');
+
+        currentLocalnDate.textContent = response.name;
+        currentLocalTemp.textContent = "Temp: " + response.main.temp + " F";
+        currentLocalWind.textContent = "Wind: " + response.wind.speed + " MPH";
+        currentLocalHumidity = "Humidity: " + response.main.humidity + "%";
+
+    });
+    getweather();
+};
+
+
+https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+
+//Below gets the 5-day weather forecast for the city:
 
 function getweather () {
     fetch("HTTP://api.openweathermap.org/data/2.5/forecast?q=" + currentCity + "&appid=832cf34605e4ecca0f923b6ee27d32a9&units=imperial")
     .then(response => response.json())
     .then(function (response) {
         console.log(response);
-        let lat = response.city.coord.lat;
-        console.log(lat);
-        let lon = response.city.coord.lon;
-        console.log(lon);
 
         const currentLocalDate1 = document.getElementById('1currentLocalDate');
         const currentLocalDate2 = document.getElementById('2currentLocalDate');
